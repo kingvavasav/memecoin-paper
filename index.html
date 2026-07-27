@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>MEMECOIN Dashboard</title>
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+body { background:#0d1117; color:#e6edf3; font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+  padding:12px; max-width:480px; margin:0 auto; }
+h1 { font-size:18px; margin-bottom:4px; }
+.sub { color:#8b949e; font-size:12px; margin-bottom:14px; }
+.stat { display:flex; gap:8px; margin-bottom:14px; }
+.stat .box { flex:1; background:#161b22; border:1px solid #21262d; border-radius:12px; padding:10px; text-align:center; }
+.stat .box .v { font-size:20px; font-weight:700; }
+.stat .box .l { font-size:11px; color:#8b949e; margin-top:2px; }
+.pos { color:#3fb950; } .neg { color:#f85149; }
+.section { font-size:13px; color:#8b949e; margin:16px 0 8px; text-transform:uppercase; letter-spacing:.5px; }
+.card { background:#161b22; border:1px solid #21262d; border-radius:12px; padding:10px 12px; margin-bottom:8px; }
+.card.run { border-left:4px solid #3fb950; }
+.card.be { border-left:4px solid #58a6ff; }
+.card.closed { border-left:4px solid #30363d; opacity:.8; }
+.ch { display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:600; margin-bottom:6px; }
+.tag { font-size:11px; color:#8b949e; font-weight:400; }
+.row { font-size:13px; margin:2px 0; }
+.sm { font-size:11px; color:#8b949e; }
+.xlink { color:#1d9bf0; text-decoration:none; }
+.xlogo { color:#1d9bf0; font-weight:700; }
+.empty { color:#8b949e; font-size:13px; padding:14px; text-align:center; }
+.tip { font-size:13px; color:#e6edf3; background:#21262d; border-radius:8px; padding:6px 10px; margin:6px 0; min-height:18px; }
+.ds { font-size:14px; font-weight:700; color:#e6edf3; padding:10px 12px; background:#161b22; border:1px solid #21262d; border-radius:12px; margin:8px 0 4px; cursor:pointer; list-style:none; }
+.rep { padding:8px 12px; }
+.rrow { display:flex; justify-content:space-between; font-size:13px; padding:5px 0; border-bottom:1px solid #21262d; }
+.rrow:last-child { border-bottom:none; }
+.rrow span { color:#8b949e; }
+.ds::-webkit-details-marker { display:none; }
+details[open] .ds { border-bottom-left-radius:0; border-bottom-right-radius:0; }
+</style>
+</head>
+<body>
+<h1>🐸 MEMECOIN Paper-Trade</h1>
+<div class="sub">Update 2026-07-27 11:22 WIB · <a class="xlink" href="https://x.com/vrijeray" target="_blank" rel="noopener">@vrijeray <span class="xlogo">𝕏</span></a></div>
+<div class="stat">
+  <div class="box"><div class="v neg">-21.11</div><div class="l">SALDO</div></div>
+  <div class="box"><div class="v pos">0.00</div><div class="l">FLT</div></div>
+  <div class="box"><div class="v neg">-311.1%</div><div class="l">NET</div></div>
+</div>
+<div class="stat">
+  <div class="box"><div class="v">0</div><div class="l">OPEN</div></div>
+  <div class="box"><div class="v pos">517</div><div class="l">CLOSED+</div></div>
+  <div class="box"><div class="v neg">1513</div><div class="l">CLOSED−</div></div>
+</div>
+<div class="section">📈 Chart Saldo</div>
+<svg viewBox="0 0 320 130" width="100%" height="130" preserveAspectRatio="none" id="chartsvg">
+  <polygon points="10,120 10.0,10.0 160.0,120.0 310.0,120.0 310,120" fill="#f85149" opacity="0.12"/>
+  <polyline points="10.0,10.0 160.0,120.0 310.0,120.0" fill="none" stroke="#f85149" stroke-width="2"/>
+  <circle class="pt" cx="10.0" cy="10.0" r="4" fill="#f85149" data-lbl="Start" data-val="10.00"/><circle class="pt" cx="160.0" cy="120.0" r="4" fill="#f85149" data-lbl="Sekarang" data-val="-21.11"/><circle class="pt" cx="310.0" cy="120.0" r="4" fill="#f85149" data-lbl="Sekarang" data-val="-21.11"/>
+</svg>
+<div id="tip" class="tip">Ketuk titik hijau/merah utk lihat saldo &amp; waktu</div>
+<div class="row sm">Min -21.11 · Max 10.00 · Sekarang -21.11</div>
+<script>
+document.querySelectorAll('#chartsvg .pt').forEach(function(c){
+  c.style.cursor='pointer';
+  c.addEventListener('click', function(){
+    var t=document.getElementById('tip');
+    t.innerHTML='<b>'+this.getAttribute('data-val')+'</b> · '+this.getAttribute('data-lbl');
+  });
+});
+</script>
+<details open><summary class="ds">🚗 Posisi Terbuka — 0</summary>
+<div class="empty">Belum ada posisi terbuka</div>
+</details>
+<details><summary class="ds">📊 Riwayat Trade — 2136</summary>
+<div class="card closed">
+  <div class="ch"><span>🟢 HhqBwU95</span><span class="tag">✅ PROFIT</span></div>
+  <div class="row">PnL <b class="pos">+100.0%</b></div>
+  <div class="row sm">2026-07-15T12:27:22 · forced-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🟢 2DGhrk3Z</span><span class="tag">✅ PROFIT</span></div>
+  <div class="row">PnL <b class="pos">+100.0%</b></div>
+  <div class="row sm">2026-07-15T12:27:22 · forced-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 84hGGBFo</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T12:27:22 · forced-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 56rVBcuo</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T12:27:22 · forced-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 DWiuzmPA</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:39:52 · manual-close-rehat-final (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🟢 7DJjxprW</span><span class="tag">✅ PROFIT</span></div>
+  <div class="row">PnL <b class="pos">+100.0%</b></div>
+  <div class="row sm">2026-07-15T11:39:52 · manual-close-rehat-final (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 43CLfVKi</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:39:52 · manual-close-rehat-final (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 DWiuzmPA</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:35:07 · manual-close-rehat-total (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🟢 7DJjxprW</span><span class="tag">✅ PROFIT</span></div>
+  <div class="row">PnL <b class="pos">+100.0%</b></div>
+  <div class="row sm">2026-07-15T11:34:40 · manual-close-rehat-total (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 ZBJN7EdR</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:34:40 · manual-close-rehat-total (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 ZBJN7EdR</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:34:04 · manual-close-rehat-total (BE, </div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 7DJjxprW</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T11:34:04 · manual-close-rehat-total (BE, </div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 GioNHcDD</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T10:52:17 · manual-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 4SB5DoAD</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T10:52:17 · manual-close-rehat (BE)</div>
+</div><div class="card closed">
+  <div class="ch"><span>🔴 AEYSfWcw</span><span class="tag">💔 SL</span></div>
+  <div class="row">PnL <b class="pos">+0.0%</b></div>
+  <div class="row sm">2026-07-15T10:41:50 · manual-close-rehat (BE, no-dat</div>
+</div>
+</details>
+<details><summary class="ds">📅 Report Mingguan (7 hari)</summary><div class="empty">Belum ada trade di periode ini</div></details>
+<details><summary class="ds">📅 Report Bulanan (30 hari)</summary>
+  <div class="rep">
+    <div class="rrow"><span>Trade</span><b>1742</b></div>
+    <div class="rrow"><span>Profit/SL/Timeout</span><b>134 / 1513 / 36</b></div>
+    <div class="rrow"><span>Saldo Awal</span><b>10.00</b></div>
+    <div class="rrow"><span>Saldo Akhir</span><b>-21.11</b></div>
+    <div class="rrow"><span>Net</span><b class="neg">-45289.1%</b></div>
+  </div>
+</details>
+</body>
+</html>
